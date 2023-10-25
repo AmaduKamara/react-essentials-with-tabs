@@ -1,7 +1,7 @@
 import CoreConcept from "./components/CoreConcept";
 import Header from "./components/Header";
 
-import componentsImg from "./assets/components.png";
+import { CORE_CONCEPTS } from "./data";
 
 function App() {
   return (
@@ -11,11 +11,9 @@ function App() {
         <h2>Time to get started!</h2>
         <section id='core-concepts'>
           <ul>
-            <CoreConcept
-              title='Components'
-              description='The core UI building block.'
-              image={componentsImg}
-            />
+            {CORE_CONCEPTS.map((c) => (
+              <CoreConcept c={c} key={c.title} />
+            ))}
           </ul>
         </section>
       </main>

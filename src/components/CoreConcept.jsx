@@ -1,11 +1,11 @@
 import React from "react";
 
-const CoreConcept = ({ title, image, description }) => {
+const CoreConcept = ({ c }) => {
   return (
     <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <img src={c.image} alt={c.title} />
+      <h3>{c.title}</h3>
+      <p>{c.description}</p>
     </li>
   );
 };
