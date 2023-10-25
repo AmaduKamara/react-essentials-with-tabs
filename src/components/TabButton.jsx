@@ -1,11 +1,13 @@
 import React from "react";
 
 const TabButton = ({ children }) => {
+  const handleClick = () => {
+    console.log("Hello world");
+  };
+
   return (
     <li>
-      <li>
-        <button>{children}</button>
-      </li>
+      <button onClick={handleClick}>{children}</button>
     </li>
   );
 };
