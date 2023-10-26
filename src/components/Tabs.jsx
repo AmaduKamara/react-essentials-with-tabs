@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import TabButton from "./TabButton";
 
 const Tabs = () => {
+  const [tabContent, setTabCcontent] = useState(
+    "Pleaase click a button to show content"
+  );
+
   const handleSelect = (selectedButton) => {
     // selectedButton => 'component', 'Jsx', 'Props', 'State'
-    console.log(selectedButton);
+    setTabCcontent(selectedButton);
+    console.log(tabContent);
   };
 
   return (
@@ -18,6 +23,7 @@ const Tabs = () => {
         <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
         <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
       </menu>
+      {tabContent}
     </section>
   );
 };
