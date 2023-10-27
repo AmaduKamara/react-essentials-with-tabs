@@ -12,6 +12,20 @@ const Tabs = () => {
 
   // console.log(EXAMPLES[selectedTopic].title);
 
+  let tabbedContent = <p>Please select a topic above.</p>;
+
+  if (selectedTopic) {
+    tabbedContent = (
+      <div id='tab-content'>
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
+
   return (
     <section id='examples'>
       <h2>Examples</h2>
@@ -23,16 +37,7 @@ const Tabs = () => {
         <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
         <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
       </menu>
-      {!selectedTopic && <p>Please select a topic above.</p>}
-      {selectedTopic && (
-        <div id='tab-content'>
-          <h3>{EXAMPLES[selectedTopic].title}</h3>
-          <p>{EXAMPLES[selectedTopic].description}</p>
-          <pre>
-            <code>{EXAMPLES[selectedTopic].code}</code>
-          </pre>
-        </div>
-      )}
+      {tabbedContent}
     </section>
   );
 };
