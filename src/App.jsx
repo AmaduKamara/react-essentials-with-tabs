@@ -6,7 +6,7 @@ import { CORE_CONCEPTS, EXAMPLES } from "./data";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <main>
         <h2>Time to get started!</h2>
@@ -19,7 +19,7 @@ function App() {
         </section>
         <Tabs data={EXAMPLES} />
       </main>
-    </div>
+    </>
   );
 }
 
