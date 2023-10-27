@@ -2,7 +2,7 @@ import CoreConcept from "./components/CoreConcept";
 import Header from "./components/Header/Header";
 import Tabs from "./components/Tabs";
 
-import { CORE_CONCEPTS } from "./data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
             ))}
           </ul>
         </section>
-        <Tabs />
+        <Tabs data={EXAMPLES} />
       </main>
     </div>
   );
